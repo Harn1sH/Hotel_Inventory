@@ -1,0 +1,14 @@
+<div [hidden]="hide">
+
+    <div *ngIf="room.availablerooms>0">
+        <h5>{{room.availablerooms}} Rooms are available</h5>
+    </div>
+
+    <div *ngIf="room.availablerooms == 0">
+        <h5>All Rooms are Booked</h5>
+    </div>
+</div>
+
+
+
+<button (click)="toggle()" >{{dummy}}</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button (click)="book()">Book Room</button>
