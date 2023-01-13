@@ -5,10 +5,11 @@ export interface room{
 }
 
 export interface deets{
+    roomid:number;
     roomtype:string;
     ameneties:string;
     price:number;
     photos:string;
     checkintime:Date;
-    checkouttimr:Date;
+    checkouttime:Date;
 }
