@@ -1,46 +1,43 @@
-<div [hidden]="hide">
 
-    <div *ngIf="room.availablerooms>0">
-        <h5>{{room.availablerooms}} Rooms are available</h5>
+    <div [hidden]="hide">
+
+        <div *ngIf="room.availablerooms>0">
+            <h5>{{room.availablerooms}} Rooms are available</h5>
+        </div>
+
+        <div *ngIf="room.availablerooms == 0">
+            <h5>All Rooms are Booked</h5>
+        </div>
     </div>
 
-    <div *ngIf="room.availablerooms == 0">
-        <h5>All Rooms are Booked</h5>
+
+
+    <button (click)="toggle()">{{dummy}}</button>  <span [hidden]="showhide">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button (click)="book()">Book Room</button></span>
+    <br>
+    <br>
+    <div *ngIf="room.availablerooms <=3" >
+        <button (click)="tabtog()">{{tablebutton}}</button>
     </div>
-</div>
 
+    <div *ngIf="th">
+        <table border="1">
+            <tr>
+                <th>Room ID</th>
+                <th>Room Type</th>
+                <th>Ameneties</th>
+                <th>Price</th>
+                <th>Checkin Time</th>
+                <th>Checkout Time</th>
+            </tr>
 
+            <tr *ngFor="let liist of roomdeets; let o = odd; let e = even; let i = index">
+                <td>{{liist.roomid}}</td>
+                <td>{{liist.roomtype}}</td>
+                <td>{{liist.ameneties}}</td>
+                <td>{{liist.price}}</td>
+                <td>{{liist.checkintime}}</td>
+                <td>{{liist.checkouttime}}</td>
 
-<button (click)="toggle()">{{dummy}}</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button (click)="book()">Book
-    Room</button>
-<br>
-<br>
-<div *ngIf="room.availablerooms <=3">
-    <button (click)="tabtog()"> {{tablebutton}} </button>
-</div>
-<br>
-<br>
-
-
-<div *ngIf="th">
-    <table border="1">
-        <tr>
-            <th>Room ID</th>
-            <th>Room Type</th>
-            <th>Ameneties</th>
-            <th>Price</th>
-            <th>Checkin Time</th>
-            <th>Checkout Time</th>
-        </tr>
-
-        <tr *ngFor="let liist of roomdeets; let o = odd; let e = even; let i = index">
-            <td>{{liist.roomid}}</td>
-            <td>{{liist.roomtype}}</td>
-            <td>{{liist.ameneties}}</td>
-            <td>{{liist.price}}</td>
-            <td>{{liist.checkintime}}</td>
-            <td>{{liist.checkouttime}}</td>
-
-        </tr>
-    </table>
-</div>
+            </tr>
+        </table>
+    </div>

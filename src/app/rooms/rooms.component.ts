@@ -15,6 +15,7 @@ export class RoomsComponent {
   tab = 0;
   tablebutton = 'Show Table'
   tablehide = 1;
+  showhide = false;
 
   room: room = {
     availablerooms: 10,
@@ -81,6 +82,10 @@ export class RoomsComponent {
       if (this.room.availablerooms > 0) {
         this.room.availablerooms = this.room.availablerooms - 1;
       }
+    }
+
+    if(this.room.availablerooms == 3){
+      this.showhide = !this.showhide;
     }
   }
 
