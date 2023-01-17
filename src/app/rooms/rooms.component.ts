@@ -1,12 +1,18 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { room } from './rooms'
 import { deets } from './rooms'
+import {SharedService} from '../shared.service'
 @Component({
   selector: 'hinv-rooms',
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.scss']
 })
 export class RoomsComponent {
+
+  loghide: boolean = false;
+  logvalue!: string;
+
+  tl : boolean = false;
 
   hotelname = 'Whaaaaaaaaat Whaaaaat';
   th = false;
@@ -25,6 +31,7 @@ export class RoomsComponent {
 
   hide = false;
   dummy = "Hide Details";
+  tv!:string;
 
   roomdeets: deets[] = [
     {
@@ -99,6 +106,26 @@ export class RoomsComponent {
 
   }
 
+  constructor( private lhide : SharedService){
+
+
+  }
+
+  tothide(){
+    
+    console.log("tohide:      ",this.tl,this.loghide);
+    this.tv = this.logvalue;
+  }
+
+  ngOnInit(){
+    this.loghide = this.lhide.logghide;
+    this.logvalue = this.lhide.loggvalue;
+    console.log("OnInit",this.loghide , this.tl);
+
+    this.tothide();
+    
+    
+  }
 
 }
 
