@@ -1,51 +1,50 @@
+<div [hidden]="hide">
 
-  
-        <div [hidden]="hide">
+    <div *ngIf="room.availablerooms>0">
+        <h5>{{room.availablerooms}} Rooms are available</h5>
+    </div>
 
-            <div *ngIf="room.availablerooms>0">
-                <h5>{{room.availablerooms}} Rooms are available</h5>
-            </div>
-
-            <div *ngIf="room.availablerooms == 0">
-                <h5>All Rooms are Booked</h5>
-            </div>
-        </div>
+    <div *ngIf="room.availablerooms == 0">
+        <h5>All Rooms are Booked</h5>
+    </div>
+</div>
 
 
 
-        <button (click)="toggle()">{{dummy}}</button>  <span [hidden]="showhide">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button (click)="book()">Book Room</button></span>
-        <br>
-        <br>
-        <div *ngIf="room.availablerooms <=3" >
-            <button (click)="tabtog()">{{tablebutton}}</button>
-        </div>
+<button (click)="toggle()">{{dummy}}</button> <span [hidden]="showhide">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button
+        (click)="book()">Book Room</button></span>
+<br>
+<br>
+<div *ngIf="room.availablerooms <=3">
+    <button (click)="tabtog()">{{tablebutton}}</button>
+</div>
 
-        <div *ngIf="th">
-            <table border="1">
-                <tr>
-                    <th>Room ID</th>
-                    <th>Room Type</th>
-                    <th>Ameneties</th>
-                    <th>Price</th>
-                    <th>Checkin Time</th>
-                    <th>Checkout Time</th>
-                </tr>
+<div *ngIf="th">
+    <table border="1">
+        <tr>
+            <th>Room ID</th>
+            <th>Room Type</th>
+            <th>Ameneties</th>
+            <th>Price</th>
+            <th>Checkin Time</th>
+            <th>Checkout Time</th>
+        </tr>
 
-                <tr *ngFor="let liist of roomdeets; let o = odd; let e = even; let i = index">
-                    <td>{{liist.roomid}}</td>
-                    <td>{{liist.roomtype}}</td>
-                    <td>{{liist.ameneties}}</td>
-                    <td>{{liist.price}}</td>
-                    <td>{{liist.checkintime}}</td>
-                    <td>{{liist.checkouttime}}</td>
+        <tr *ngFor="let liist of roomdeets; let o = odd; let e = even; let i = index">
+            <td>{{liist.roomid}}</td>
+            <td>{{liist.roomtype}}</td>
+            <td>{{liist.ameneties}}</td>
+            <td>{{liist.price}}</td>
+            <td>{{liist.checkintime | date:'medium'}}</td>
+            <td>{{liist.checkouttime | date:'medium'}}</td>
 
-                </tr>
-            </table>
-        </div>
-        <h1>{{logvalue}}</h1>
+        </tr>
+    </table>
+</div>
+<h1>{{logvalue}}</h1>
 
-        <div [ngSwitch]="logvalue">
-            <div *ngSwitchCase="'Admin'"> Welcome Admin</div>
-            <div *ngSwitchCase="'User'"> Welcome User</div>
+<div [ngSwitch]="logvalue">
+    <div *ngSwitchCase="'Admin'"> Welcome Admin</div>
+    <div *ngSwitchCase="'User'"> Welcome User</div>
 
-        </div>
+</div>
