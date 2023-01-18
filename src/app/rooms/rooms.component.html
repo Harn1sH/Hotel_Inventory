@@ -35,9 +35,9 @@
                     <td>{{liist.roomid}}</td>
                     <td>{{liist.roomtype}}</td>
                     <td>{{liist.ameneties}}</td>
-                    <td>{{liist.price}}</td>
-                    <td>{{liist.checkintime}}</td>
-                    <td>{{liist.checkouttime}}</td>
+                    <td>{{liist.price | currency : 'INR'}}</td>
+                    <td>{{liist.checkintime | date : 'medium'}}</td>
+                    <td>{{liist.checkouttime | date : 'medium'}}</td>
 
                 </tr>
             </table>
