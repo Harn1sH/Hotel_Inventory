@@ -113,23 +113,19 @@ export class RoomsComponent {
 
   tothide(){
     
-    // console.log("tohide:      ",this.tl,this.loghide);
-    // this.tv = this.logvalue;
+    console.log("tohide:      ",this.tl,this.loghide);
+    this.tv = this.logvalue;
   }
 
   ngOnInit(){
-    // this.loghide = this.lhide.logghide;
-    // this.logvalue = this.lhide.loggvalue;
-    // console.log("OnInit",this.loghide , this.tl);
+    this.loghide = this.lhide.logghide;
+    this.logvalue = this.lhide.loggvalue;
+    console.log("OnInit",this.loghide , this.tl);
 
-    // this.tothide();
-
-    this.logvalue = 'User';
+    this.tothide();
     
     
   }
-
-
 
 }
 
