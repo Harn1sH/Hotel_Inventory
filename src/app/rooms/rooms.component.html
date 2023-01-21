@@ -21,26 +21,7 @@
         </div>
 
         <div *ngIf="th">
-            <!-- <table border="1px">
-                <tr>
-                    <th >Room ID</th>
-                    <th >Room Type</th>
-                    <th >Ameneties</th>
-                    <th >Price</th>
-                    <th >Checkin Time</th>
-                    <th >Checkout Time</th>
-                </tr>
-
-                <tr *ngFor="let liist of roomdeets; let o = odd; let e = even; let i = index">
-                    <td >{{liist.roomid}}</td>
-                    <td >{{liist.roomtype}}</td>
-                    <td >{{liist.ameneties}}</td>
-                    <td >{{liist.price | currency : "INR"}}</td>
-                    <td >{{liist.checkintime | date : "short"}}</td>
-                    <td >{{liist.checkouttime | date : "short"}}</td>
-
-                </tr>
-            </table> -->
+            
             <hinv-roomlist [roomsdeet]="roomdeets"></hinv-roomlist>
         </div>
 
