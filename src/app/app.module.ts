@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { DisplaytabComponent } from './rooms/displaytab/displaytab.component';
+import { LoginComponent } from './login/login.component';
+import { WelcomeSignComponent } from './welcome-sign/welcome-sign.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RoomsComponent,
-    DisplaytabComponent
+    DisplaytabComponent,
+    LoginComponent,
+    WelcomeSignComponent
   ],
   imports: [
     BrowserModule,

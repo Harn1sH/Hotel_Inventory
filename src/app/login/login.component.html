@@ -1,1 +1,32 @@
-<p>login works!</p>
+<span class="flex">
+    <app-welcome-sign class="bold"></app-welcome-sign>
+
+
+    <span class="right"> 
+        <button (click)="login()">Login</button>
+        <div [hidden]="loginhide">
+            <br>
+            <button (click)="admin()">Admin</button>
+            <br>
+            <br>
+            <button (click)="user()">User</button>
+        </div>
+    </span>   
+    <br>
+    <br>
+
+      
+</span>
+
+<div class="body" [hidden]="!loginhide"> 
+    <div [ngSwitch]="loginvalue">
+        <div *ngSwitchCase="'Admin'"> <h3>Welcome Admin</h3></div>
+        <div *ngSwitchCase="'User'"> <h3>Welcome User</h3></div>
+    </div>
+</div>
+
+<div *ngIf="!loginvalue">
+    <app-rooms></app-rooms>
+</div>
+
+
