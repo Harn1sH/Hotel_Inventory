@@ -1,0 +1,22 @@
+<table border="1px">
+    <tr>
+        <th class="th">Room ID</th>
+        <th class="th">Room Type</th>
+        <th class="th">Ameneties</th>
+        <th class="th">Price</th>
+        <th class="th">Checkin Time</th>
+        <th class="th">Checkout Time</th>
+        <th class="th">Select Room</th>
+    </tr>
+
+    <tr *ngFor="let liist of roomsdeet; let o = odd; let e = even; let i = index">
+        <td class="td">{{liist.roomid}}</td>
+        <td class="td">{{liist.roomtype}}</td>
+        <td class="td">{{liist.ameneties}}</td>
+        <td class="td">{{liist.price | currency : "INR"}}</td>
+        <td class="td">{{liist.checkintime | date : "short"}}</td>
+        <td class="td">{{liist.checkouttime | date : "short"}}</td>
+        <td class="td"><button (click)="selectroom(liist)">Select</button></td>
+
+    </tr>
+</table>

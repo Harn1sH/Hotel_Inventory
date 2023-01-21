@@ -21,8 +21,5 @@
         </div>
 
         <div *ngIf="th">
-            
-            <hinv-displaytab></hinv-displaytab>            
-
+            <app-displaytab [roomsdeet]="roomdeets" (selectedroom)="roomsel($event)"></app-displaytab>
         </div>
-

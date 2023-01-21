@@ -125,4 +125,9 @@ export class RoomsComponent implements OnInit {
     this.tv = this.logvalue;
   }
 
+
+  roomsel(sedroom:deets){
+    console.log(sedroom);
+    
+  }
 }
