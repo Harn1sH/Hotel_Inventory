@@ -13,7 +13,7 @@
 
 
 
-        <button (click)="toggle()">{{dummy}}</button>  <span [hidden]="showhide">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button (click)="book()">Book Room</button></span>
+        <button (click)="toggle()">{{dummy}}</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <button (click)="addr()">Add Room</button><span [hidden]="showhide">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button (click)="book()">Book Room</button> </span>
         <br> 
         <br>
         <div *ngIf="room.availablerooms <=3" >

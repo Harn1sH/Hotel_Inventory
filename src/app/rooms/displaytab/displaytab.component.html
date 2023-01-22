@@ -10,7 +10,7 @@
     </tr>
 
     <tr *ngFor="let liist of roomsdeet; let o = odd; let e = even; let i = index">
-        <td class="td">{{liist.roomid}}</td>
+        <td class="td">{{i+1}}</td>
         <td class="td">{{liist.roomtype}}</td>
         <td class="td">{{liist.ameneties}}</td>
         <td class="td">{{liist.price | currency : "INR"}}</td>

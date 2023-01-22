@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, OnChanges, SimpleChanges } from '@angular/core';
 import { deets } from '../rooms';
 import { outputAst } from '@angular/compiler';
 
@@ -8,9 +8,14 @@ import { outputAst } from '@angular/compiler';
   styleUrls: ['./displaytab.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DisplaytabComponent implements OnInit {
+export class DisplaytabComponent implements OnInit , OnChanges{
 
   constructor() { }
+  ngOnChanges(changes: SimpleChanges): void {
+/*       console.log("Done");
+ */
+
+  }
 
   ngOnInit(): void {
   }

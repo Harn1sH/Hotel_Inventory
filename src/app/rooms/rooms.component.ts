@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {deets,room} from './rooms';
 
 @Component({
   selector: 'app-rooms',
   templateUrl: './rooms.component.html',
-  styleUrls: ['./rooms.component.scss']
+  styleUrls: ['./rooms.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RoomsComponent implements OnInit {
 
@@ -13,7 +14,7 @@ export class RoomsComponent implements OnInit {
    }
    roomdeets : deets[] = [];
    seldroom! : deets;
-
+   newroom! : deets;
   ngOnInit(): void {
 
     this.roomdeets= [
@@ -103,7 +104,7 @@ export class RoomsComponent implements OnInit {
       }
     }
 
-    if(this.room.availablerooms == 3){
+    if(this.room.availablerooms == 0){
       this.showhide = !this.showhide;
     }
   }
@@ -130,5 +131,20 @@ export class RoomsComponent implements OnInit {
   roomsel(sedroom:deets){
     this.seldroom = sedroom;
     
+  }
+
+  addr(){
+     this.newroom = 
+     {
+      roomid: 4,
+      roomtype: 'Private Room',
+      ameneties: 'AC minibar and Mini Fridge ',
+      price: 10000,
+      photos: 'https://images.pexels.com/photos/70441/pexels-photo-70441.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      checkintime: new Date('13-Jan-2023'),
+      checkouttime: new Date('14-Jan-2023'),
+    }
+
+    this.roomdeets = [...this.roomdeets,this.newroom];
   }
 }
