@@ -12,6 +12,7 @@ export class RoomsComponent implements OnInit {
     this.logvalue = "User";
    }
    roomdeets : deets[] = [];
+   seldroom! : deets;
 
   ngOnInit(): void {
 
@@ -127,7 +128,7 @@ export class RoomsComponent implements OnInit {
 
 
   roomsel(sedroom:deets){
-    console.log(sedroom);
+    this.seldroom = sedroom;
     
   }
 }
