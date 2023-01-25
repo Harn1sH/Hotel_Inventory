@@ -7,6 +7,7 @@ import { RoomsComponent } from './rooms/rooms.component';
 import { DisplaytabComponent } from './rooms/displaytab/displaytab.component';
 import { LoginComponent } from './login/login.component';
 import { WelcomeSignComponent } from './welcome-sign/welcome-sign.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { WelcomeSignComponent } from './welcome-sign/welcome-sign.component';
     RoomsComponent,
     DisplaytabComponent,
     LoginComponent,
-    WelcomeSignComponent
+    WelcomeSignComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
